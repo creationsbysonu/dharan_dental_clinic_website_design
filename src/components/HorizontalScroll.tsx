@@ -136,7 +136,7 @@ export default function HorizontalScroll() {
       </div>
 
       {/* Pinned horizontal scroll container */}
-      <div ref={wrapRef} className="hscroll-outer" id="treatments">
+      <div ref={wrapRef} className="hscroll-outer" id="services">
         {/* Progress line */}
         <div className="hscroll-progress">
           <div className="hscroll-progress-fill" />

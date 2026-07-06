@@ -61,7 +61,7 @@ function FlipCard({ item, index }: { item: typeof REASONS[0]; index: number }) {
       <motion.div 
         className="flip-card-inner"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        transition={{ duration: 0.7, ease: "easeInOut" }}
       >
         {/* Front */}
         <div className="flip-card-front editorial-card">

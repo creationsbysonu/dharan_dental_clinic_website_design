@@ -1,3 +1,5 @@
+import { scrollTo } from '../hooks/useSmoothScroll';
+
 // Tooth SVG path (inline, no lucide dependency)
 const ToothPath = () => (
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +48,7 @@ export default function Footer() {
             <h5>Services</h5>
             <ul>
               {['Crown & Bridge', 'Dental Implants', 'Braces & Invisalign', 'Cosmetic Dentistry', 'Digital Imaging', 'Root Canal', 'Removable Dentures'].map(s => (
-                <li key={s}><a href="#services">{s}</a></li>
+                <li key={s}><a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('#services'); }}>{s}</a></li>
               ))}
             </ul>
           </div>
@@ -56,7 +58,7 @@ export default function Footer() {
             <h5>Branches</h5>
             <ul>
               {['Dharan-9 HQ', 'Gaighat', 'Biratnagar', 'Itahari', 'Tarahara', 'Jhumka', 'Duhabi'].map(b => (
-                <li key={b}><a href="#branches">{b}</a></li>
+                <li key={b}><a href="#branches" onClick={(e) => { e.preventDefault(); scrollTo('#branches'); }}>{b}</a></li>
               ))}
             </ul>
           </div>
@@ -81,7 +83,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#branches">
+                <a href="#branches" onClick={(e) => { e.preventDefault(); scrollTo('#branches'); }}>
                   <SvgPin /> Dharan-9, Putali Line, Sunsari
                 </a>
               </li>

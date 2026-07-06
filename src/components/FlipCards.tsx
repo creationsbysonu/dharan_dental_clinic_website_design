@@ -9,36 +9,42 @@ const REASONS = [
     title: 'In-House Digital Lab',
     headline: 'Fabricated Here,\nFitted Today.',
     body: 'Our own CAD/CAM dental lab means crowns, veneers, and bridges are milled in-clinic — no week-long waits, no outsourcing, perfect fit guaranteed.',
+    img: '/images/svc_resto_1783267740932.png',
   },
   {
     num: '02',
     title: 'Digital 3D Imaging',
     headline: 'See What Others\nCan\'t.',
     body: 'Full 3D cone-beam imaging available in-house. Precise, radiation-efficient diagnostics — the same technology used at top dental hospitals worldwide.',
+    img: '/images/about_tech_1783267689646.png',
   },
   {
     num: '03',
     title: 'NMC Registered',
     headline: 'Experts You\nCan Trust.',
     body: 'Every practitioner at Dharan Dental Clinic is registered with the Nepal Medical Council — fully qualified, continuously trained, and deeply experienced.',
+    img: '/images/about_consultation_1783267700251.png',
   },
   {
     num: '04',
     title: 'ISO Sterilisation',
     headline: 'Your Safety Is\nOur Priority.',
     body: 'Every instrument is sterilised to hospital-grade standards using Class-B autoclaves and single-use disposable barriers. Infection risk: zero.',
+    img: '/images/svc_surgery_1783267761027.png',
   },
   {
     num: '05',
     title: '5,400+ Patients',
     headline: 'Serving\nEvery Smile.',
     body: 'Over 5,400 patients across our branches trust us with their dental health. From children\'s first checkup to senior full-mouth rehabilitation.',
+    img: '/images/smile_case2_after_1783268592075.png',
   },
   {
     num: '06',
     title: 'Open 7AM–9PM',
     headline: 'Always Here\nWhen You Need Us.',
     body: 'Dental emergencies don\'t keep office hours — neither do we. Walk in any day across all branches. Our team is ready from 7 in the morning.',
+    img: '/images/hero_clinic_1783267679077.png',
   },
 ];
 
@@ -64,14 +70,21 @@ function FlipCard({ item, index }: { item: typeof REASONS[0]; index: number }) {
         transition={{ duration: 0.7, ease: "easeInOut" }}
       >
         {/* Front */}
-        <div className="flip-card-front editorial-card">
+        <div 
+          className="flip-card-front editorial-card"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(12,35,64,0.1), rgba(12,35,64,0.75)), url(${item.img})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
           <div className="editorial-card-top">
-            <span className="editorial-card-num">{item.num}</span>
-            <h4 className="editorial-card-title">{item.title}</h4>
+            <span className="editorial-card-num" style={{ color: 'var(--ivory)', fontWeight: 600, textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>{item.num}</span>
+            <h4 className="editorial-card-title" style={{ color: 'rgba(255,255,255,0.9)', textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>{item.title}</h4>
           </div>
           <div className="editorial-card-main" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '100%' }}>
-            <h3 className="editorial-card-headline">{item.headline}</h3>
-            <p className="editorial-card-body" style={{ marginTop: '1rem', fontSize: '0.85rem', color: 'var(--teal)' }}>Hover to read more →</p>
+            <h3 className="editorial-card-headline" style={{ color: '#fff', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{item.headline}</h3>
+            <p className="editorial-card-body" style={{ marginTop: '1rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.8)' }}>Hover to read more →</p>
           </div>
         </div>
         
